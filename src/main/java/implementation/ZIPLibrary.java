@@ -9,6 +9,8 @@ import net.lingala.zip4j.util.Zip4jConstants;
 
 import java.io.File;
 
+import static java.io.File.separator;
+
 
 /**
  * Created by Adam Piech on 2016-11-28.
@@ -17,10 +19,10 @@ import java.io.File;
 public class ZIPLibrary implements IZIPLibrary {
 
     @Override
-    public void compress(String source, String destination, String password) {
+    public void compress(String source, String destination, String zipFileName, String password) {
         try {
             File file = new File(source);
-            ZipFile zipFile = new ZipFile(destination + ".zip");
+            ZipFile zipFile = new ZipFile(destination + separator + zipFileName);
             zipFile.addFile(file, prepareParameters(password));
         } catch (ZipException e) {
             e.printStackTrace();
