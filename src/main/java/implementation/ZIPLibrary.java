@@ -29,7 +29,15 @@ public class ZIPLibrary implements IZIPLibrary {
 
     @Override
     public void decompress(String source, String destination, String password) {
-
+        try {
+            ZipFile zipFile = new ZipFile(source);
+            if (zipFile.isEncrypted()) {
+                zipFile.setPassword(password);
+            }
+            zipFile.extractAll(destination);
+        } catch (ZipException e) {
+            e.printStackTrace();
+        }
     }
 
     private ZipParameters prepareParameters(String password) {
