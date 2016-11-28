@@ -1,6 +1,7 @@
 package intefaces;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by Adam Piech on 2016-11-22.
@@ -8,6 +9,6 @@ import java.io.File;
 
 public interface IHTTPLibrary {
 
-    public File downloadFile(String url);
+    public void downloadFile(String url, String file) throws IOException;
 
 }
