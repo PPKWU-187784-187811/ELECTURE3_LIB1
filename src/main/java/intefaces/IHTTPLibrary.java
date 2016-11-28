@@ -1,6 +1,5 @@
 package intefaces;
 
-import java.io.File;
 import java.io.IOException;
 
 /**

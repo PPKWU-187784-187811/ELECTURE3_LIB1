@@ -26,10 +26,12 @@ public class HTTPLibrary implements IHTTPLibrary {
             fileStream = new FileOutputStream(file);
             readData(bufferStream, fileStream);
         } finally {
-            if (bufferStream != null)
+            if (bufferStream != null) {
                 bufferStream.close();
-            if (fileStream != null)
+            }
+            if (fileStream != null) {
                 fileStream.close();
+            }
         }
     }
 
