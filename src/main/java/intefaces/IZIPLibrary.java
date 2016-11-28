@@ -6,5 +6,8 @@ package intefaces;
 
 public interface IZIPLibrary {
 
+    public void compress(String source, String destination, String password);
+
+    public void decompress(String source, String destination, String password);
 
 }
